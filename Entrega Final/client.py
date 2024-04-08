@@ -1,0 +1,21 @@
+import requests
+url = "http://localhost:8000/"
+response = requests.request(method="POST", url=url + "guess", json={"player": "Julian"})
+print(response.text)
+response = requests.request(method="GET", url=url + "guess")
+print(response.text)
+response = requests.request(method="GET", url=url + "guess/1")
+print(response.text)
+
+response = requests.request(method="PUT", url=url + "guess/1", json={"attempt": "25"})
+print(response.text)
+response = requests.request(method="PUT", url=url + "guess/1", json={"attempt": "75"})
+print(response.text)
+response = requests.request(method="PUT", url=url + "guess/1", json={"attempt": "50"})
+print(response.text)
+response = requests.request(method="GET", url=url + "guess")
+print(response.text)
+response = requests.request(method="DELETE", url=url + "guess/1")
+print(response.text)
+response = requests.request(method="GET", url=url + "guess")
+print(response.text)
